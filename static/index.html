@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YT Playlist Downloader</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>YT Playlist Downloader</h1>
+            <p>Enter playlist URL, select format, and wait for your zip!</p>
+        </header>
+
+        <main class="glass-card">
+            <div class="input-group">
+                <input type="text" id="playlist-url" placeholder="Paste YouTube Playlist URL here..." />
+            </div>
+
+            <div class="options-group">
+                <label class="radio-container">
+                    <input type="radio" name="format" value="mp4" checked>
+                    <span class="checkmark"></span>
+                    Video (MP4)
+                </label>
+                <label class="radio-container">
+                    <input type="radio" name="format" value="mp3">
+                    <span class="checkmark"></span>
+                    Audio (MP3)
+                </label>
+            </div>
+
+            <div id="preview-container" class="hidden">
+                <div class="selection-header">
+                    <h4 id="preview-title"></h4>
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="select-all" checked>
+                        <span class="checkmark"></span>
+                        Select All
+                    </label>
+                </div>
+                <div id="preview-list" class="preview-list"></div>
+            </div>
+
+            <button id="download-btn" class="primary-btn">Start Download</button>
+
+            <div id="progress-container" class="hidden">
+                <div class="progress-info">
+                    <span id="status-text">Starting...</span>
+                    <span id="percentage">0%</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div id="progress-bar-fill"></div>
+                </div>
+                <p id="current-file" class="current-file-text"></p>
+                <button id="cancel-btn" class="secondary-btn">Cancel Download</button>
+            </div>
+
+            <div id="result-container" class="hidden">
+                <div class="success-icon">✓</div>
+                <h3>Download Ready!</h3>
+                <p id="final-title" style="color: #aaa; margin: 10px 0;"></p>
+                <a id="download-link" href="#" class="download-btn-final">Download Zip File</a>
+            </div>
+
+            <div id="error-container" class="hidden" style="margin-top: 20px; color: #ff4d4d;">
+                <p id="error-message"></p>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
